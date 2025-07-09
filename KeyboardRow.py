@@ -8,12 +8,9 @@ class Solution:
         
         result = []
         for word in words:
-            lower_word = set(word.lower())
+            lower_word = set(word.lower() + row1)
             
-            # AT. 01262024 the <= operator is used to check if the left-hand side set is a subset of the right-hand side set. 
-            # It returns True if all elements of the left-hand side set are contained within the right-hand side set, otherwise it returns False.
-            if lower_word <= row1 or lower_word <= row2 or lower_word <= row3:
-                result.append(word)
+            result.append(lower_word)
         return result
 
 # Example usage
